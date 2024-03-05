@@ -2,7 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.Model.Patient;
 
-public interface patientService {
+public interface PatientService {
 
     Patient addPatient(Patient patient);
 

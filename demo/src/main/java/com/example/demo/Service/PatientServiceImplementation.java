@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 
-public class patientServiceImplementation implements patientService {
+public class PatientServiceImplementation implements PatientService {
 
     @Autowired
     private PatientRepository patientRepository;
@@ -22,7 +22,6 @@ public class patientServiceImplementation implements patientService {
 
     @Override
     public Patient getPatientById(String id) {
-
         return patientRepository.findById(id).get();
 
     }

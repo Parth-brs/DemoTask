@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.Service.patientService;
 
 @RestController
 @RequestMapping("/patient")
@@ -15,7 +14,7 @@ import com.example.demo.Service.patientService;
 public class PatientController {
 
     @Autowired
-    private patientService PatientService;
+    private com.example.demo.Service.PatientService PatientService;
 
     @PostMapping("/addPatient")
     public ResponseEntity<String> addPatient(@RequestBody Patient patient) {
