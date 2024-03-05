@@ -6,6 +6,8 @@ import com.example.demo.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 
 public class PatientServiceImplementation implements PatientService {
@@ -21,8 +23,7 @@ public class PatientServiceImplementation implements PatientService {
     }
 
     @Override
-    public Patient getPatientById(String id) {
-        return patientRepository.findById(id).get();
-
+    public Patient getPatientById(Integer id) {
+        return patientRepository.findById(id).orElse(null);
     }
 }

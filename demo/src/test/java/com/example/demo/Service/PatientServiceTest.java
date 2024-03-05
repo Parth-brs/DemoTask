@@ -41,9 +41,8 @@ class PatientServiceTest {
 
     @Test
     void addPatient() {
-
         Patient patient = new Patient();
-        patient.setId("1");
+        patient.setId(1);
         patient.setName("John Doe");
         patient.setAmount("30000");
 
@@ -57,13 +56,13 @@ class PatientServiceTest {
     @Test
     void getPatientById() {
         Patient patient = new Patient();
-        patient.setId("1");
+        patient.setId(1);
         patient.setName("John Doe");
         patient.setAmount("30000");
 
-        when(patientRepository.findById("1")).thenReturn(Optional.of(patient));
+        when(patientRepository.findById(1)).thenReturn(Optional.of(patient));
 
-        Patient result = patientService.getPatientById("1");
+        Patient result = patientService.getPatientById(1);
 
         assertEquals(patient.getId(), result.getId());
         assertEquals(patient.getName(), result.getName());
