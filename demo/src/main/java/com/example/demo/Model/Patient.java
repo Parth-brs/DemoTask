@@ -5,24 +5,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="patient")
+@Table(name = "Patient")
 public class Patient {
 
     @Id
-    private String patientId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String Name;
 
     private String Amount;
+    private String City;
+
 }
 
