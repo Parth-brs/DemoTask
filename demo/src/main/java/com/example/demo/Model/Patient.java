@@ -9,12 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="Student")
+@Table(name="patient")
 public class Patient {
 
     @Id
