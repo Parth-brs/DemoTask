@@ -36,6 +36,7 @@ class PatientServiceTest {
 
     @AfterEach
     void tearDown() {
+
         patientRepository.deleteAll();
     }
 

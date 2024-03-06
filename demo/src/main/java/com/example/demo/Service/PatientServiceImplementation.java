@@ -24,6 +24,8 @@ public class PatientServiceImplementation implements PatientService {
 
     @Override
     public Patient getPatientById(Integer id) {
+
         return patientRepository.findById(id).orElse(null);
     }
+
 }
