@@ -35,5 +35,6 @@ public class Patient {
     @NotNull
     private String City;
 
+
 }
 
