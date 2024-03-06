@@ -8,7 +8,6 @@ import com.example.demo.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 
 @Service
 
@@ -21,7 +20,6 @@ public class PatientServiceImplementation implements PatientService {
     @Override
     public Patient addPatient(Patient patient)  throws PatientException {
         return patientRepository.save(patient);
-
     }
 
     @Override
