@@ -30,6 +30,7 @@ public class PatientController {
         catch (PatientException patientException) {
             patientException.getMessage();
         }
+
         return null;
     }
 

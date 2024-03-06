@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Exception.PatientException;
 import com.example.demo.Model.Patient;
 import com.example.demo.Service.PatientService;
 import org.junit.jupiter.api.AfterEach;
@@ -44,27 +45,30 @@ class PatientControllerTest {
     }
 
     @Test
-    void addPatient() {
-        Patient patient = new Patient();
-        patient.setId(1);
-        patient.setName("Parth");
-        patient.setAmount("30000");
+    void addPatient() throws PatientException {
+
+            Patient patient = new Patient();
+            patient.setId(1);
+            patient.setName("Parth");
+            patient.setAmount("30000");
 
 
-        when(patientService.addPatient(any(Patient.class))).thenReturn(patient);
+            when(patientService.addPatient(any(Patient.class))).thenReturn(patient);
 
 
-        ResponseEntity<Patient> responseEntity = patientController.addPatient(patient);
+            ResponseEntity<Patient> responseEntity = patientController.addPatient(patient);
 
 
-        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
+            assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
 
-        assertEquals(patient, responseEntity.getBody());
+            assertEquals(patient, responseEntity.getBody());
+
     }
 
     @Test
-    void getPatientById() {
-        Patient patient = new Patient();
+    void getPatientById() throws PatientException {
+
+           Patient patient = new Patient();
         patient.setId(1);
         patient.setName("Kabir");
         patient.setAmount("30000");
@@ -79,9 +83,8 @@ class PatientControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
 
         assertEquals(patient, response.getBody());
-    }
+       }
 
-    @Test
-    void getTest() {
-    }
+
+
 }
