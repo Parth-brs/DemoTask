@@ -7,6 +7,7 @@ import com.example.demo.Model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 
@@ -17,7 +18,8 @@ public class PatientController {
     @Autowired
     private com.example.demo.Service.PatientService PatientService;
 
-    @PostMapping("/addPatient")
+
+    @PostMapping("/admin/addPatient")
     public ResponseEntity<Patient> addPatient(@RequestBody Patient patient)  {
         try{
             Patient addedPatient = PatientService.addPatient(patient);
@@ -34,7 +36,8 @@ public class PatientController {
         return null;
     }
 
-    @GetMapping("/getPatient/{id}")
+
+    @GetMapping("/user/getPatient/{id}")
     public ResponseEntity<?> getPatientById(@PathVariable Integer id) {
         try{
             Patient patient = PatientService.getPatientById(id);
@@ -51,7 +54,7 @@ public class PatientController {
     }
 
 
-    @GetMapping("/test")
+    @GetMapping("/admin/test")
     public String getTest() {
         return "Running";
     }
