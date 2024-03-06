@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import com.example.demo.Exception.PatientException;
 import com.example.demo.Model.Patient;
 import com.example.demo.Repository.PatientRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -41,7 +42,7 @@ class PatientServiceTest {
     }
 
     @Test
-    void addPatient() {
+    void addPatient() throws PatientException {
         Patient patient = new Patient();
         patient.setId(1);
         patient.setName("John Doe");
@@ -55,7 +56,7 @@ class PatientServiceTest {
     }
 
     @Test
-    void getPatientById() {
+    void getPatientById() throws PatientException {
         Patient patient = new Patient();
         patient.setId(1);
         patient.setName("John Doe");

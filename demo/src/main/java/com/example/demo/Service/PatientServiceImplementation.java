@@ -20,7 +20,6 @@ public class PatientServiceImplementation implements PatientService {
     @Override
     public Patient addPatient(Patient patient)  throws PatientException {
         return patientRepository.save(patient);
-
     }
 
     @Override

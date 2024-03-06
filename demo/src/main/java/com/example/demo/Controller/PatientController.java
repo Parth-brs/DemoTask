@@ -7,7 +7,10 @@ import com.example.demo.Model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 
 @RestController
@@ -18,7 +21,7 @@ public class PatientController {
     private com.example.demo.Service.PatientService PatientService;
 
     @PostMapping("/addPatient")
-    public ResponseEntity<Patient> addPatient(@RequestBody Patient patient)  {
+    public ResponseEntity<Patient> addPatient(@RequestBody @Valid Patient patient)  {
         try{
             Patient addedPatient = PatientService.addPatient(patient);
             if (addedPatient != null) {
