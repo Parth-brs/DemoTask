@@ -15,7 +15,7 @@ class PatientRepositoryTest {
 
     @Test
     void testSaveAndRetrievePatient() {
-        // Create a new Patient object
+
         Patient patient = new Patient();
         patient.setName("John Doe");
         patient.setAmount("30000");
@@ -33,5 +33,7 @@ class PatientRepositoryTest {
         assertEquals(patient.getName(), retrievedPatient.getName());
         assertEquals(patient.getAmount(), retrievedPatient.getAmount());
     }
+
+
 
 }
